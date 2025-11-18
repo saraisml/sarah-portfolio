@@ -1,12 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me</title>
+<style>
+  /* RESET */
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; }
+  body { background:#0a0a1a; color:#eee; }
+
+  /* HEADER */
+  header {
+      background:#11111f;
+      padding:20px 50px;
+      display:flex; justify-content: space-between; align-items:center;
+      box-shadow:0 0 20px rgba(0,255,255,0.2);
+  }
+  header h1 { color:#00eaff; }
+  nav a { color:#eee; margin-left:20px; text-decoration:none; font-weight:bold; transition:0.3s; }
+  nav a:hover { color:#00eaff; }
+
+  /* SECTION */
+  section {
+      text-align:center;
+      padding:50px 20px;
+  }
+  section h2 {
+      font-size:2rem;
+      margin-bottom:20px;
+      color:#00eaff;
+      text-shadow:0 0 10px #00eaff, 0 0 20px #0ff;
+      animation: glow 2s infinite alternate;
+  }
+  section p {
+      font-size:1.2rem;
+      line-height:1.6;
+      max-width:800px;
+      margin:0 auto;
+      color:#ddd;
+      text-shadow:0 0 5px #00eaff;
+  }
+
+  /* FUTURE TECH BOXES */
+  .future-box {
+      background:#11111f;
+      border:2px solid #00eaff;
+      border-radius:15px;
+      box-shadow:0 0 20px rgba(0,255,255,0.4);
+      padding:30px;
+      margin:30px auto;
+      max-width:900px;
+      transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .future-box:hover {
+      transform:scale(1.05);
+      box-shadow:0 0 50px rgba(0,255,255,0.7);
+  }
+  .future-box h3 {
+      color:#00eaff;
+      margin-bottom:15px;
+      text-shadow:0 0 10px #0ff, 0 0 20px #00eaff;
+  }
+  .future-box p {
+      color:#ccc;
+      line-height:1.5;
+  }
+
+  /* ANIMATION */
+  @keyframes glow {
+      from { text-shadow:0 0 5px #00eaff, 0 0 10px #0ff; }
+      to { text-shadow:0 0 20px #0ff, 0 0 40px #00eaff; }
+  }
+
+  /* FOOTER */
+  footer {
+      text-align:center;
+      padding:30px 20px;
+      background:#11111f;
+      box-shadow:0 -5px 20px rgba(0,255,255,0.2);
+      margin-top:50px;
+  }
+  footer a { color:#00eaff; text-decoration:none; }
+</style>
 </head>
 <body>
+
 <header>
   <h1>Sara - Web Developer</h1>
   <nav>
@@ -20,11 +98,29 @@
 <section id="about">
   <h2>About Me</h2>
   <p>Hello! I am Sara, a Computer Science graduate. I specialize in Web Development and creating professional websites using HTML, CSS, JavaScript, Angular, PHP, and MySQL.</p>
+
+  <!-- FUTURE TECH HIGHLIGHTS -->
+  <div class="future-box">
+      <h3>FutureTech Vision</h3>
+      <p>Designing futuristic websites with interactive UI, neon effects, and smooth animations. Focused on delivering modern solutions with HTML, CSS, JS, PHP, and MySQL.</p>
+  </div>
+
+  <div class="future-box">
+      <h3>Projects & Expertise</h3>
+      <p>Building dynamic web apps, AI-assisted platforms, responsive mobile-first designs, and professional portfolios that impress clients and users alike.</p>
+  </div>
+
+  <div class="future-box">
+      <h3>Learning & Innovation</h3>
+      <p>Always exploring new technologies, frameworks, and design trends to keep every project ahead of its time.</p>
+  </div>
+
 </section>
 
 <footer>
     <p>&copy; 2025 Sara – Web Developer. All rights reserved.</p>
-  <p>Email: <a href="mailto:saraisml1234@gmail.com">saraisml1234@gmail.com</a></p>
+    <p>Email: <a href="mailto:saraisml1234@gmail.com">saraisml1234@gmail.com</a></p>
 </footer>
+
 </body>
 </html>
