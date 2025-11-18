@@ -1,115 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Home</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sara Portfolio</title>
+<style>
+  /* RESET */
+  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif; }
+  body { background:#0a0a1a; color:#eee; }
 
+  /* HEADER */
+  header {
+      background: #11111f;
+      padding: 20px 50px;
+      display:flex; justify-content: space-between; align-items:center;
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+  }
+  header h1 { color:#00eaff; }
+  nav a { color:#eee; margin-left:20px; text-decoration:none; font-weight:bold; transition:0.3s; }
+  nav a:hover { color:#00eaff; }
+
+  /* SECTION TITLES */
+  section h2 { text-align:center; font-size:2rem; margin:40px 0 20px; color:#00eaff; }
+
+  /* HOME */
+  #home { text-align:center; padding:50px 20px; font-size:1.2rem; line-height:1.6; }
+
+  /* PROJECTS */
+  .projects-container { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; padding:20px; }
+
+  .project-card {
+      background:#11111f;
+      border-radius:15px;
+      box-shadow:0 0 20px rgba(0,255,255,0.3);
+      width:350px;
+      overflow:hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display:flex; flex-direction:column;
+  }
+  .project-card:hover { transform:scale(1.03); box-shadow:0 0 40px rgba(0,255,255,0.6); }
+
+  .project-image { width:100%; height:200px; object-fit:cover; transition: filter 0.5s, transform 0.5s; }
+  .project-card:hover .project-image { filter: hue-rotate(90deg) brightness(1.3) saturate(1.5); transform: scale(1.05); }
+
+  .project-content { padding:20px; }
+  .project-content h3 { color:#00eaff; margin-bottom:15px; }
+  .project-content ul { list-style:none; margin-bottom:15px; }
+  .project-content ul li { margin-bottom:8px; }
+  .project-button { display:inline-block; padding:10px 20px; background:#00eaff; color:#11111f; text-decoration:none; border-radius:8px; font-weight:bold; transition:0.3s; }
+  .project-button:hover { background:#0ff; }
+
+  /* FUTURETECH SLIDER */
+  .slider { position:relative; width:100%; height:200px; overflow:hidden; margin-bottom:15px; }
+  .slider img {
+      width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;
+      opacity:0; transition: opacity 1s ease, transform 1s ease, filter 1s ease;
+  }
+  .slider img.active { opacity:1; }
+  .project-card:hover .slider img.active { filter: hue-rotate(90deg) brightness(1.3) saturate(1.5); transform:scale(1.05); }
+
+  /* FOOTER */
+  footer { text-align:center; padding:30px 20px; background:#11111f; box-shadow:0 -5px 20px rgba(0,255,255,0.2); margin-top:50px; }
+  footer a { color:#00eaff; text-decoration:none; }
+</style>
+</head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Sara - Web Developer</h1>
-    <nav>
+<header>
+  <h1>Sara - Web Developer</h1>
+  <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="service.html">Services</a>
       <a href="contact.php">Contact</a>
-    </nav>
-  </header>
+  </nav>
+</header>
 
-  <!-- Home Section -->
-  <section id="home">
-    <h2>Welcome to My Portfolio</h2>
-    <p>I am a Computer Science graduate passionate about Web Development and creating professional projects.</p>
-  </section>
+<section id="home">
+  <h2>Welcome to My Portfolio</h2>
+  <p>I am a Computer Science graduate passionate about Web Development and creating professional projects.</p>
+</section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <div class="projects-container">
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-container">
 
       <!-- Project 1 -->
       <div class="project-card">
-        <img src="companywebsite.png" alt="Company Website Screenshot" class="project-image">
-
-        <div class="project-content">
-          <h3>Company Website</h3>
-
-          <p>
-            A professional company website built using <strong>HTML, CSS, and PHP</strong>.
-            Includes <strong>Home</strong>, <strong>About</strong>, <strong>Services</strong>, and <strong>Contact</strong> pages.
-            The <strong>Contact</strong> page is fully connected to a MySQL database for saving messages.
-          </p>
-
-          <a href="#" target="_blank" class="project-button">View Project</a>
-        </div>
+          <img src="companywebsite.png" alt="Company Website Screenshot" class="project-image">
+          <div class="project-content">
+              <h3>Company Website</h3>
+              <p>A professional company website built using HTML, CSS, and PHP. Includes Home, About, Services, and Contact pages.</p>
+              <a href="#" class="project-button">View Project</a>
+          </div>
       </div>
 
       <!-- Project 2 -->
       <div class="project-card">
-        <img src="medtrack.png" alt="MedTrack System Screenshot" class="project-image">
-
-        <div class="project-content">
-          <h3>MedTrack – AI-Powered Medical Records System</h3>
-
-          <p>
-            MedTrack is an intelligent system I developed to modernize medical records
-            for clinics and hospitals. Includes a <strong>Web App</strong> + <strong>Android App</strong> with
-            <strong>AI document analysis</strong>.
-          </p>
-
-          <h4>Key Features</h4>
-          <ul>
-            <li>Doctor & Patient dashboards</li>
-            <li>AI medical document analysis</li>
-            <li>Medical record management</li>
-            <li>Appointment booking system</li>
-            <li>Secure login & authentication</li>
-            <li>Responsive design + Android App</li>
-            <li>Advanced search & filtering</li>
-          </ul>
-
-          <h4>Technologies Used</h4>
-          <ul>
-            <li>Frontend: HTML, CSS, JavaScript</li>
-            <li>Backend: PHP</li>
-            <li>Database: MySQL</li>
-            <li>AI Module: Medical document extraction</li>
-            <li>Mobile: Android (Java/Kotlin)</li>
-          </ul>
-
-          <h4>My Role</h4>
-          <ul>
-            <li>System analysis & requirement gathering</li>
-            <li>Database design (ERD)</li>
-            <li>Frontend & backend development</li>
-            <li>Android development</li>
-            <li>AI module implementation</li>
-            <li>Testing & optimization</li>
-          </ul>
-
-          <p>
-            <strong>Outcome:</strong> A modern, fast, and secure platform providing easy access
-            to medical records through AI-powered automation.
-          </p>
-
-          <a href="#" class="project-button">View Project</a>
-        </div>
+          <img src="medtrack.png" alt="MedTrack System Screenshot" class="project-image">
+          <div class="project-content">
+              <h3>MedTrack – AI Medical System</h3>
+              <p>An intelligent system to modernize medical records with Web + Android App + AI document analysis.</p>
+              <a href="#" class="project-button">View Project</a>
+          </div>
       </div>
 
-    </div> <!-- END projects-container -->
+      <!-- FutureTech Project -->
+      <div class="project-card">
+          <div class="slider">
+              <img src="futuretech1.png" alt="FutureTech Screenshot" class="active">
+              <img src="fduturetech2.png" alt="FutureTech Screenshot">
+              <img src="futuretech3.png" alt="FutureTech Screenshot">
+              <img src="futuretech4.png" alt="FutureTech Screenshot">
+              <img src="futuretech5.png" alt="FutureTech Screenshot">
+              <img src="futuretech6.png" alt="FutureTech Screenshot">
+          </div>
+          <div class="project-content">
+              <h3>FutureTech – Company Website</h3>
+              <p>A futuristic company website showcasing services, projects, and contact features. Built with HTML, CSS, JS & PHP.</p>
+              <a href="#" class="project-button">View Project</a>
+          </div>
+      </div>
 
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Sara – Web Developer. All rights reserved.</p>
-    <p>Email: <a href="mailto:saraisml1234@gmail.com">saraisml1234@gmail.com</a></p>
-  </footer>
+<footer>
+  <p>&copy; 2025 Sara – Web Developer. All rights reserved.</p>
+  <p>Email: <a href="mailto:saraisml1234@gmail.com">saraisml1234@gmail.com</a></p>
+</footer>
+
+<script>
+  // SLIDER JS
+  const slides = document.querySelectorAll('.slider img');
+  let current = 0;
+  function showSlide(index){
+      slides.forEach((img, i)=> img.classList.remove('active'));
+      slides[index].classList.add('active');
+  }
+  setInterval(()=>{
+      current++;
+      if(current>=slides.length) current=0;
+      showSlide(current);
+  },3000);
+</script>
 
 </body>
 </html>
