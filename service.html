@@ -1,12 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services - WoW FutureTech</title>
+<style>
+  /* RESET */
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; }
+  body { background:#0a0a1a; color:#eee; }
+
+  /* HEADER */
+  header {
+      background:#11111f;
+      padding:20px 50px;
+      display:flex; justify-content: space-between; align-items:center;
+      box-shadow:0 0 20px rgba(0,255,255,0.2);
+  }
+  header h1 { color:#00eaff; }
+  nav a { color:#eee; margin-left:20px; text-decoration:none; font-weight:bold; transition:0.3s; }
+  nav a:hover { color:#00eaff; }
+
+  /* SECTION */
+  section {
+      text-align:center;
+      padding:50px 20px;
+  }
+  section h2 {
+      font-size:2rem;
+      margin-bottom:40px;
+      color:#00eaff;
+      text-shadow:0 0 10px #00eaff, 0 0 20px #0ff;
+      animation: glow 2s infinite alternate;
+  }
+
+  /* FUTURE TECH SERVICE BOXES */
+  .service-box {
+      background:#11111f;
+      border:2px solid #00eaff;
+      border-radius:15px;
+      box-shadow:0 0 20px rgba(0,255,255,0.4);
+      padding:30px;
+      margin:20px auto;
+      max-width:800px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align:left;
+  }
+  .service-box:hover {
+      transform:scale(1.05);
+      box-shadow:0 0 50px rgba(0,255,255,0.7);
+  }
+  .service-box h3 {
+      color:#00eaff;
+      margin-bottom:15px;
+      text-shadow:0 0 10px #0ff, 0 0 20px #00eaff;
+  }
+  .service-box p {
+      color:#ccc;
+      line-height:1.5;
+      margin-bottom:10px;
+  }
+
+  /* ANIMATION */
+  @keyframes glow {
+      from { text-shadow:0 0 5px #00eaff, 0 0 10px #0ff; }
+      to { text-shadow:0 0 20px #0ff, 0 0 40px #00eaff; }
+  }
+
+  /* FOOTER */
+  footer {
+      text-align:center;
+      padding:30px 20px;
+      background:#11111f;
+      box-shadow:0 -5px 20px rgba(0,255,255,0.2);
+      margin-top:50px;
+  }
+  footer a { color:#00eaff; text-decoration:none; }
+</style>
 </head>
 <body>
+
 <header>
   <h1>Sara - Web Developer</h1>
   <nav>
@@ -19,17 +91,37 @@
 
 <section id="services">
   <h2>My Services</h2>
-  <ul>
-    <li>Web Development (HTML, CSS, JavaScript, Angular)</li>
-    <li>Backend Development (PHP, MySQL)</li>
-    <li>Responsive Design & UI/UX</li>
-    <li>Portfolio & Company Websites</li>
-  </ul>
+
+  <div class="service-box">
+      <h3>Web Development</h3>
+      <p>Creating modern, responsive websites using <strong>HTML, CSS, JavaScript, Angular</strong>.</p>
+      <p>Interactive UI, animations, and futuristic neon designs for a wow effect.</p>
+  </div>
+
+  <div class="service-box">
+      <h3>Backend Development</h3>
+      <p>Building dynamic web apps and databases using <strong>PHP & MySQL</strong>.</p>
+      <p>Secure login systems, dynamic content management, and smooth data handling.</p>
+  </div>
+
+  <div class="service-box">
+      <h3>UI/UX & Responsive Design</h3>
+      <p>Designing user-friendly interfaces with futuristic aesthetics.</p>
+      <p>Mobile-first and cross-device responsive layouts for perfect experience.</p>
+  </div>
+
+  <div class="service-box">
+      <h3>Portfolio & Company Websites</h3>
+      <p>Developing professional websites that showcase projects, services, and achievements.</p>
+      <p>Fully integrated contact forms, project galleries, and interactive features.</p>
+  </div>
+
 </section>
 
 <footer>
    <p>&copy; 2025 Sara – Web Developer. All rights reserved.</p>
   <p>Email: <a href="mailto:saraisml1234@gmail.com">saraisml1234@gmail.com</a></p>
 </footer>
+
 </body>
 </html>
